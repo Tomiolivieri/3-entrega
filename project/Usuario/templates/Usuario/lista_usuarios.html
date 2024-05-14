@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>app usuario</title>
-</head>
-<body>
-    <h1>app usuario</h1>
-    <h1>lista de usuarios</h1>
-    {% for usuario in Usuarios  %}
-        {{usuario.dni}}
-        {{usuario.nombre}}
-        
-    {% endfor %}
-    <button><a href="http://127.0.0.1:8000/">sssss</a></button>
+{% extends 'core/base.html' %}
+{% block title %}
+    Usuario | Lista de usuarios
+{% endblock title %}
+            <title>app usUsuario | Lista de usuariosuario</title>
+        {% block content %}
+            
+        <h1>LISTA DE USUARIOS REGISTRADOS</h1>
+        {% for usuario in Usuarios  %}
+        <h1>-----------</h1>
+        <h4>{{usuario.dni}}</h4>
+        <h4>{{usuario.nombre}}</h4>
+        <h1>-----------</h1>
 
-</body>
-</html>
+        {% endfor %}
+
+        </body>
+        </html>
+{% endblock content %}
