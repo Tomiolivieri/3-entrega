@@ -6,6 +6,8 @@ class Provincia(models.Model):
     def __str__(self) -> str:
         return self.nombre
 
+
+
 class Usuario(models.Model):
     dni = models.CharField(max_length=8)
     nombre = models.CharField(max_length=30)
@@ -15,3 +17,6 @@ class Usuario(models.Model):
     def __str__(self) -> str:
         return self.dni
 
+class Meta:
+    verbose_name = "usuario"
+    verbose_name_plural = "usuarios"
