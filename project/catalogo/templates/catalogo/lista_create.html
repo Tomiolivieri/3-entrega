@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block title %}
+    Producto | Producto categoria
+{% endblock title %}
+        <title>app CATALOGO | Lista de productos</title>
+        {% block content %}
+            
+        <h1>LISTA DE PRODUCTOS REGISTRADOS</h1>
+        {% for catalogo in catalogo  %}
+        <h1>-----------</h1>
+        <h4>{{catalogo}}</h4>
+
+        {% endfor %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+
+
+        </form>
+{% endblock content %}

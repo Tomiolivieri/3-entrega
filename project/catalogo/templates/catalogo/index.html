@@ -1,7 +1,11 @@
 {% extends 'core/base.html' %}
 {% block title %}
-    Asistencia el cliente
+    Proyecto CoderHouse | Catalogo
 {% endblock title %}
+
 {% block content %}
-    <h1>ADSDSA</h1>
+<h2>catalogo</h2>
+<button><a href="{% url 'catalogo:lista_catalogo' %}">Lista de los nuevos ingresos al catalogo</a></button>
+<button><a href="{% url 'catalogo:lista_create' %}">Crear lista de catalogo</a></button>
+</html>
 {% endblock content %}
