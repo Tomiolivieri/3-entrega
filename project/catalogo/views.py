@@ -11,8 +11,11 @@ def lista_catalogo(request):
     return render(request, "catalogo/lista_catalogo.html", contexto)
 
 def lista_create(request):
-    if request.method == "post":
-        form = NuevoProductoForm()
+    if request.method == "POST":
+        form = NuevoProductoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, "catalogo/lista_catalogo.html")
     else:
         form = NuevoProductoForm()
     return render(request, "catalogo/lista_create.html", {"form": form})
