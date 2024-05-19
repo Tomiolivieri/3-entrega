@@ -12,11 +12,7 @@ class Usuario(models.Model):
     dni = models.CharField(max_length=8)
     nombre = models.CharField(max_length=30)
     telefono =  models.CharField(max_length=12)
-    provincia = models.ForeignKey(Provincia, on_delete=models.SET_NULL, null=True, blank=True, verbose_name= "Provincia en la que reside")
+    provincia = models.ForeignKey(Provincia, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self) -> str:
         return self.dni
-
-class Meta:
-    verbose_name = "usuario"
-    verbose_name_plural = "usuarios"

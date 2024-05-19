@@ -19,3 +19,8 @@ def lista_create(request):
     else:
         form = NuevoProductoForm()
     return render(request, "catalogo/lista_create.html", {"form": form})
+
+#def buscar_producto():
+    #busqueda = request#(#"buscar")
+    #productos = NuevoProducto.objects.all()
+    #if busqueda:
