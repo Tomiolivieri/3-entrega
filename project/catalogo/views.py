@@ -20,7 +20,12 @@ def lista_create(request):
         form = NuevoProductoForm()
     return render(request, "catalogo/lista_create.html", {"form": form})
 
-#def buscar_producto():
-    #busqueda = request#(#"buscar")
-    #productos = NuevoProducto.objects.all()
-    #if busqueda:
+"""def buscar(request):
+    busqueda = request.GET.get("busqueda", None)
+    if busqueda:
+        print(busqueda)
+        consulta = NuevoProducto.objects.filter(nombre__icontains=busqueda)
+    else:
+        consulta = NuevoProducto.objects.all()
+    contexto = {"NuevoProducto" : consulta}
+    return render(request, "catalogo/lista_catalogo", contexto)"""

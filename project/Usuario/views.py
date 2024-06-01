@@ -19,3 +19,6 @@ def create_usuario(request):
     else:
         formulario = NuevoUsuarioForm()
     return render(request, "Usuario/agregar_usuarios.html", {"formulario": formulario})
+
+def acerca_de(request):
+    return render(request, "Usuario/acerca_de.html")
