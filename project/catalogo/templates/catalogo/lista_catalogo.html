@@ -6,7 +6,6 @@ Catalogo | Lista de productos
 {% block content %}
 
 
-<!-- el form de abajo se debe modificar para que responda bien al "buscar", quedó corregido el HTML -->
 <form action="{% url 'catalogo:lista_catalogo' %}" method="get">
     <input type="text" name="busqueda" placeholder="Buscar..."><button>Buscar</button>
 </form>
@@ -15,9 +14,7 @@ Catalogo | Lista de productos
 <h1>-----------</h1>
 <h4>{{catalogo}}</h4>
 <button><a href="{% url 'catalogo:catalogo_delete' pk=catalogo.id %}">Borrar Producto</a></button>
-<button><a href="">Modificar Catalogo</a></button>
-<!-- Aquí arriba modificar el "modificar Catalogo, se debe pasar el form y la PK" -->
-
+<button><a href="{% url 'catalogo:catalogo_update' pk=catalogo.id%}">Modificar Catalogo</a></button>
 {% endfor %}
 
 

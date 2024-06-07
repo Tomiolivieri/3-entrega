@@ -6,8 +6,8 @@ app_name = "catalogo"
 
 urlpatterns = [
     path("", home, name="home"),
-    path("lista/catalogo", lista_catalogo, name="lista_catalogo"),
+    path("lista", lista_catalogo, name="lista_catalogo"),
     path("lista/create", lista_create, name="lista_create"),
-    path("catalogo/modificar/<int:pk>/", catalogo_update, name="catalogo_modificar"),
-    path("catalogo/catalogo_delete/<int:pk>/", catalogo_delete, name="catalogo_delete"),
+    path("update/<int:pk>", catalogo_update, name="catalogo_update"),
+    path("catalogo/catalogo_delete/<int:pk>/", catalogo_delete, name="catalogo_delete")
 ]
