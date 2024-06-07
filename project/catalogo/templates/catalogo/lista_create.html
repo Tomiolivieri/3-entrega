@@ -3,20 +3,33 @@
     Producto | Producto categoria
 {% endblock title %}
         <title>app CATALOGO | Lista de productos</title>
-        {% block content %}
+{% block content %}
             
-        <h1>AGREGAR PRODUCTO</h1>
+{% if form.instance.pk %}
+<h1 class="text-center">Crear nuevo Catalogo</h1>
+{% else %}
+<h1 class="text-center">Modificar Catalogo</h1>
+{% endif %}
+
+        {% for catalogo in catalogo  %}
+        <h4>{{catalogo}}</h4>
+        {% endfor %}
+
         {% for catalogo in catalogo  %}
         <h1>-----------</h1>
         <h4>{{catalogo}}</h4>
 
         {% endfor %}
 
-        <form action="" method="post">
+        <form method="POST">
             {% csrf_token %}
-            {{form}}
-            <button type="submit">Guardar</button>
-
-
+            <table class="table table-bordered">
+                {{ form.as_table }}
+            </table>
+            <div class="text-center">
+                <button type="submit">Guardar Cambios</button>
+                <a href="{% url 'catalogo:lista_catalogo' %}" type="button" >Cancelar</button></a>
+            </div>
         </form>
+
 {% endblock content %}

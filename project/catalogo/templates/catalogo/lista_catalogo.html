@@ -1,19 +1,24 @@
 {% extends 'core/base.html' %}
 {% block title %}
-    Catalogo | Lista de productos
+Catalogo | Lista de productos
 {% endblock title %}
-            <title>app CATALOGO | Lista de productos</title>
-        {% block content %}
-        
-        
-        <button class="btn btn-primary " type="submit">Buscar elementos</button>
-        <h1>LISTA DE PRODUCTOS REGISTRADOS</h1>
-        {% for catalogo in catalogo  %}
-        <h1>-----------</h1>
-        <h4>{{catalogo}}</h4>
+<title>app CATALOGO | Lista de productos</title>
+{% block content %}
 
-        {% endfor %}
 
-        </body>
-        </html>
+<!-- el form de abajo se debe modificar para que responda bien al "buscar", quedó corregido el HTML -->
+<form action="{% url 'catalogo:lista_catalogo' %}" method="get">
+    <input type="text" name="busqueda" placeholder="Buscar..."><button>Buscar</button>
+</form>
+<h1>LISTA DE PRODUCTOS</h1>
+{% for catalogo in catalogo %}
+<h1>-----------</h1>
+<h4>{{catalogo}}</h4>
+<button><a href="{% url 'catalogo:catalogo_delete' pk=catalogo.id %}">Borrar Producto</a></button>
+<button><a href="">Modificar Catalogo</a></button>
+<!-- Aquí arriba modificar el "modificar Catalogo, se debe pasar el form y la PK" -->
+
+{% endfor %}
+
+
 {% endblock content %}
