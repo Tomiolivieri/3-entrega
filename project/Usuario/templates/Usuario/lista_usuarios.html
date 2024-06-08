@@ -2,13 +2,15 @@
 {% block title %}
     Usuario | Lista de usuarios
 {% endblock title %}
-            <title>app usUsuario | Lista de usuariosuario</title>
+            <title>app Usuario | Lista de usuarios</title>
         {% block content %}
             
         <h1>LISTA DE USUARIOS REGISTRADOS</h1>
         {% for usuario in Usuarios  %}  
         <h4>{{usuario.dni}}</h4>
         <h4>{{usuario.nombre}}</h4>
+        <button><a href="{% url 'Usuario:usuario_update' pk=usuario.id%}">Modificar Catalogo</a></button>
+        <button><a href="{% url 'Usuario:usuario_delete' pk=usuario.id%}">Borrar Producto</a></button>
         <h1>-----------</h1>
 
         {% endfor %}
