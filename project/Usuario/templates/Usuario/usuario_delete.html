@@ -9,7 +9,7 @@
 <form method="POST">
     {% csrf_token %}
     <button type="submit">Confirmar eliminación</button>
-    <a href="{% url 'Usuario:lista_usuarios'%}">Cancelar</a>
+    <a href="http://127.0.0.1:8000/Usuario/lista">Cancelar</a>
 </form>
 
 {% endblock content %}
